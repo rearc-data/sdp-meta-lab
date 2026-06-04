@@ -1,0 +1,15 @@
+[
+  {
+    "target_table": "silver.my_source",
+    "target_partition_cols": [],
+    "select_exp": [
+      "col1",
+      "col2",
+      "col3",
+      "current_timestamp() as processed_at"
+    ],
+    "where_clause": [
+      "col1 is not null"
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "expect": {
+    "valid_row_count": "COUNT(*) > 0"
+  },
+  "expect_or_drop": {
+    "no_duplicates": "col1 is not null"
+  },
+  "expect_or_fail": {},
+  "expect_or_quarantine": {}
+}

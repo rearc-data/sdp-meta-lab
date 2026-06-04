@@ -1,0 +1,16 @@
+[
+  {
+    "target_table": "silver.sample_csv",
+    "target_partition_cols": [],
+    "select_exp": [
+      "id",
+      "name",
+      "email",
+      "current_timestamp() as processed_at"
+    ],
+    "where_clause": [
+      "id is not null",
+      "email like '%@%.'"
+    ]
+  }
+]

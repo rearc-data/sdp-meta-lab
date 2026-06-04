@@ -1,0 +1,10 @@
+{
+  "expect": {
+    "has_rows": "COUNT(*) > 0"
+  },
+  "expect_or_drop": {
+    "id_not_null": "id is not null"
+  },
+  "expect_or_fail": {},
+  "expect_or_quarantine": {}
+}
