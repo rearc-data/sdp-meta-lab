@@ -1,50 +1,26 @@
 {
-  "data_flow_group": "my_data_group",
-  "data_flow_id": "my_source_001",
+  "data_flow_group": "sdp_meta_lab_flow_group",
+  "data_flow_id": "sample_csv_volume",
   "source_format": "cloudFiles",
   "source_details": {
-    "source_path_dev": "s3://my-bucket/data/my_source/",
-    "source_path_prod": "s3://prod-bucket/data/my_source/",
-    "source_schema_path": "s3://my-bucket/schemas/my_source/",
-    "source_catalog": "uc_catalog",
-    "source_database": "source_db",
-    "source_metadata": {}
+    "source_path_dev": "/Volumes/sdp_meta_lab/sdp_meta_20260826/conf/data/",
+    "source_path_prod": "/Volumes/sdp_meta_lab/sdp_meta_prod/conf/data/",
+    "source_schema_path": "${workspace.file_path}/conf/schemas/sample_schema/sample_schema.ddl"
   },
-  "bronze_catalog_dev": "main",
-  "bronze_catalog_prod": "main",
-  "bronze_database_dev": "bronze",
-  "bronze_database_prod": "bronze",
-  "bronze_table": "my_source",
-  "bronze_table_comment": "Bronze table for my_source data",
+  "bronze_catalog_dev": "sdp_meta_lab",
+  "bronze_database_dev": "sdp_meta_20260826",
+  "bronze_table": "sample_csv_bronze",
   "bronze_reader_options": {
-    "cloudFiles.format": "parquet",
+    "cloudFiles.format": "csv",
+    "header": "true",
     "cloudFiles.inferColumnTypes": "true",
     "cloudFiles.rescuedDataColumn": "_rescued_data"
   },
   "bronze_partition_columns": [],
-  "bronze_cluster_by": [],
-  "bronze_table_path_dev": "/mnt/bronze/my_source",
-  "bronze_table_path_prod": "/mnt/bronze/my_source",
-  "bronze_table_properties": {
-    "pipelines.autoOptimize.managed": "false",
-    "pipelines.reset.allowed": "false"
-  },
-  "bronze_data_quality_expectations_json": "conf/dqe/my_source_bronze_dqe.json",
-  "silver_catalog_dev": "main",
-  "silver_catalog_prod": "main",
-  "silver_database_dev": "silver",
-  "silver_database_prod": "silver",
-  "silver_table": "my_source",
-  "silver_table_comment": "Silver table for my_source data",
-  "silver_partition_columns": [],
-  "silver_cluster_by": [],
-  "silver_table_path_dev": "/mnt/silver/my_source",
-  "silver_table_path_prod": "/mnt/silver/my_source",
-  "silver_table_properties": {
-    "pipelines.autoOptimize.managed": "false",
-    "pipelines.reset.allowed": "false"
-  },
-  "silver_transformation_json": "conf/silver_transformations.json",
-  "silver_data_quality_expectations_json_dev": "conf/dqe/my_source_silver_dqe.json",
-  "silver_data_quality_expectations_json_prod": "conf/dqe/my_source_silver_dqe.json"
+  "bronze_data_quality_expectations_json": "${workspace.file_path}/conf/dqe/sample_bronze_dqe.json",
+  "silver_catalog_dev": "sdp_meta_lab",
+  "silver_database_dev": "sdp_meta_20260826",
+  "silver_table": "sample_csv_silver",
+  "silver_transformation_json_dev": "${workspace.file_path}/conf/silver_transformations_sample.json",
+  "silver_data_quality_expectations_json_dev": "${workspace.file_path}/conf/dqe/sample_silver_dqe.json"
 }

@@ -1,10 +1,13 @@
 {
-  "expect": {
-    "has_rows": "COUNT(*) > 0"
-  },
   "expect_or_drop": {
-    "id_not_null": "id is not null"
+    "system_id_not_null": "system_id IS NOT NULL",
+    "start_date_not_null": "start_date IS NOT NULL"
   },
-  "expect_or_fail": {},
-  "expect_or_quarantine": {}
+  "expect_or_fail": {
+    "valid_status": "status IN ('ACTIVE', 'DEGRADED', 'MAINTENANCE', 'OFFLINE')"
+  },
+  "expect_or_quarantine": {
+    "valid_start_date": "try_to_date(start_date, 'yyyy-MM-dd') IS NOT NULL",
+    "valid_end_date": "end_date IS NULL OR end_date = '' OR try_to_date(end_date, 'yyyy-MM-dd') IS NOT NULL"
+  }
 }

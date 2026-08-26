@@ -16,12 +16,12 @@ def test_run_local_pipeline():
     rc = run_pipeline("conf/onboarding_csv.json", env="dev")
     assert rc == 0
 
-    bronze_file = Path("data/bronze/part-0.parquet")
-    silver_file = Path("data/silver/part-0.parquet")
+    bronze_file = Path("data/bronze/sample_csv/part-0.parquet")
+    silver_file = Path("data/silver/sample_csv/part-0.parquet")
     assert bronze_file.exists()
     assert silver_file.exists()
 
     # verify silver content
     df = pd.read_parquet(silver_file)
     assert not df.empty
-    assert set(["id", "name", "email"]).issubset(df.columns)
+    assert set(["system_id", "status", "start_date", "end_date"]).issubset(df.columns)
