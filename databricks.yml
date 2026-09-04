@@ -2,28 +2,30 @@ bundle:
   name: sdp-meta-lab
 
 scripts:
-  load_test_data:
+  upload_test_data:
     env:
       UC_CATALOG_NAME: ${var.uc_catalog_name}
       SDP_META_SCHEMA: ${var.sdp_meta_schema}
       CONF_VOLUME: ${var.conf_volume}
     content: |
       set -euo pipefail
-      volume_dir="dbfs:/Volumes/$UC_CATALOG_NAME/$SDP_META_SCHEMA/$CONF_VOLUME"
-      wheels_dir="$volume_dir/wheels"
-      databricks fs mkdirs "$wheels_dir"
-      databricks fs cp "wheels/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl" "$wheels_dir/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl" --overwrite
-      data_dir="$volume_dir/data"
+      data_dir="dbfs:/Volumes/$UC_CATALOG_NAME/$SDP_META_SCHEMA/$CONF_VOLUME/data"
       databricks fs mkdirs "$data_dir"
-      databricks fs cp "tests/resources/volume/sample.csv" "$data_dir/sample.csv" --overwrite
+      databricks fs cp "data/host_status_updates.csv" "$data_dir/host_status_updates.csv" --overwrite
+
+  upload_sdp_meta_wheel:
+    env:
+      WHEEL_SOURCE: ${var.wheel_source}
+    content: |
+      set -euo pipefail
+      databricks fs mkdirs "$WHEEL_SOURCE"
+      databricks fs cp "wheels/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl" "$WHEEL_SOURCE/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl" --overwrite
 
 include:
   - resources/*.yml
-
 sync:
   exclude:
     - .gitignore
-    - .vscode
 
 targets:
   dev:
@@ -31,6 +33,5 @@ targets:
     default: true
     workspace:
        host: https://dbc-b31a694d-1da3.cloud.databricks.com
-       profile: egrun
     variables:
       development_enabled: true

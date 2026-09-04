@@ -1,0 +1,18 @@
+[
+  {
+    "target_table": "sdp_meta_20260826.host_status_updates_cdc_silver",
+    "target_partition_cols": [],
+    "select_exp": [
+      "system_id",
+      "status",
+      "region",
+      "hostname",
+      "to_date(start_date, 'yyyy-MM-dd') as start_date",
+      "to_date(end_date, 'yyyy-MM-dd') as end_date",
+      "current_timestamp() as processed_at"
+    ],
+    "where_clause": [
+      "system_id is not null"
+    ]
+  }
+]

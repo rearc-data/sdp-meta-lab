@@ -1,0 +1,10 @@
+{
+  "expect_or_drop": {
+    "system_id_not_null": "system_id IS NOT NULL",
+    "operation_not_null": "operation IS NOT NULL"
+  },
+  "expect_or_fail": {
+    "valid_operation": "operation IN ('INSERT', 'UPDATE', 'DELETE')",
+    "valid_status": "status IN ('ACTIVE', 'DEGRADED', 'MAINTENANCE', 'OFFLINE')"
+  }
+}

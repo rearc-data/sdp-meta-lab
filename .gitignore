@@ -70,20 +70,9 @@ dist/
 build/
 *.tar.gz
 
-# Notebooks
-.ipynb_checkpoints/
-*.ipynb
-
 # OS
 .DS_Store
 Thumbs.db
-
-# Project specific
-config/local/
-scripts/local_config.py
-schemas/*.schema
-checkpoints/
-metrics/
 
 # Git
 .git/
