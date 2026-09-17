@@ -1,10 +1,10 @@
 {
   "expect_or_drop": {
     "system_id_not_null": "system_id IS NOT NULL",
-    "start_date_not_null": "start_date IS NOT NULL"
+    "event_time_not_null": "event_time IS NOT NULL"
   },
   "expect_or_fail": {
-    "valid_status": "status IN ('ACTIVE', 'DEGRADED', 'MAINTENANCE', 'OFFLINE')"
+    "valid_status": "status IN ('ACTIVE', 'DEGRADED', 'MAINTENANCE', 'OFFLINE', 'TERMINATED')"
   },
   "expect_or_quarantine": {}
 }

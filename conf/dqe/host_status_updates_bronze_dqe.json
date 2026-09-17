@@ -1,13 +1,12 @@
 {
   "expect_or_drop": {
     "system_id_not_null": "system_id IS NOT NULL",
-    "start_date_not_null": "start_date IS NOT NULL"
+    "event_time_not_null": "event_time IS NOT NULL"
   },
   "expect_or_fail": {
-    "valid_status": "status IN ('ACTIVE', 'DEGRADED', 'MAINTENANCE', 'OFFLINE')"
+    "valid_status": "status IN ('ACTIVE', 'DEGRADED', 'MAINTENANCE', 'OFFLINE', 'TERMINATED')"
   },
   "expect_or_quarantine": {
-    "valid_start_date": "try_to_date(start_date, 'yyyy-MM-dd') IS NOT NULL",
-    "valid_end_date": "end_date IS NULL OR end_date = '' OR try_to_date(end_date, 'yyyy-MM-dd') IS NOT NULL"
+    "valid_event_time": "try_to_date(event_time, 'yyyy-MM-dd') IS NOT NULL"
   }
 }

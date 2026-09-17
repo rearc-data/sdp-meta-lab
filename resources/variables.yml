@@ -8,15 +8,15 @@ variables:
 
   sdp_meta_schema:
     description: Schema that holds the bronze_dataflowspec / silver_dataflowspec tables.
-    default: sdp_meta_20260826
+    default: #NO DEFAULT
 
   bronze_target_schema:
     description: Schema where the bronze SDP Pipeline writes its tables.
-    default: sdp_meta_20260826
+    default: default
 
   silver_target_schema:
     description: Schema where the silver SDP Pipeline writes its tables.
-    default: sdp_meta_20260826
+    default: default
 
   layer:
     description: Layer to onboard. One of `bronze`, `silver`, `bronze_silver`.
@@ -85,7 +85,7 @@ variables:
       Documents (and lets `bundle-validate` enforce) which install style this
       bundle uses. `pypi` -> `sdp_meta_dependency` should be a coordinate.
       `volume_path` -> `sdp_meta_dependency` should start with `/Volumes/`.
-    default: /Volumes/sdp_meta_lab/sdp_meta_20260826/conf/wheels/
+    default: /Volumes/sdp_meta_lab/default/conf/wheels/
 
   sdp_meta_dependency:
     description: |
@@ -93,7 +93,7 @@ variables:
       `pip install` this verbatim and the onboarding job consumes it as an
       environments dependency. Must match `wheel_source`. The sentinel
       `__SET_ME__` will fail-fast at validate and at runtime.
-    default: /Volumes/sdp_meta_lab/sdp_meta_20260826/conf/wheels/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl
+    default: /Volumes/sdp_meta_lab/default/conf/wheels/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl
 
   # NOTE: no `type:` on these booleans. Databricks bundles only accept
   # `type: complex` (for maps/arrays); `type: bool` is rejected with
