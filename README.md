@@ -235,7 +235,7 @@ Typical test coverage:
 
 ## Support
 
-- dlt-meta: [Official Documentation](https://databrickslabs.github.io/dlt-meta/)
+- SDP-META: [Official Documentation](https://databrickslabs.github.io/sdp-meta/)
 - Databricks: [Community Forums](https://community.databricks.com/)
 - DLT: [Delta Live Tables Guide](https://docs.databricks.com/en/delta-live-tables/index.html)
 
