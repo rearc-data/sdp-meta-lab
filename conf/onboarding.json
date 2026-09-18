@@ -4,16 +4,10 @@
     "data_flow_id": "host_status_updates_csv_volume",
     "source_format": "cloudFiles",
     "source_details": {
-      "source_path_dev": "/Volumes/sdp_meta_lab/sdp_meta_egrun/sdp_meta/data",
-      "source_metadata": {
-        "select_metadata_cols": {
-            "source_file": "_metadata.file_name",
-            "source_file_date": "_metadata.file_modification_time"
-        }
-      }
+      "source_path_dev": "/Volumes/sdp_meta_lab/sdp_meta_USERNAME/sdp_meta/data"
     },
     "bronze_catalog_dev": "sdp_meta_lab",
-    "bronze_database_dev": "sdp_meta_egrun",
+    "bronze_database_dev": "sdp_meta_USERNAME",
     "bronze_table": "host_status_updates_csv_bronze",
     "bronze_reader_options": {
       "cloudFiles.format": "csv",
@@ -24,21 +18,9 @@
     "bronze_partition_columns": [],
     "bronze_data_quality_expectations_json": "${workspace.file_path}/conf/dqe/host_status_updates_bronze_dqe.json",
     "silver_catalog_dev": "sdp_meta_lab",
-    "silver_database_dev": "sdp_meta_egrun",
+    "silver_database_dev": "sdp_meta_USERNAME",
     "silver_table": "host_status_updates_csv_silver",
     "silver_transformation_json_dev": "${workspace.file_path}/conf/host_status_updates_silver_transformations.json",
-    "silver_data_quality_expectations_json_dev": "${workspace.file_path}/conf/dqe/host_status_updates_silver_dqe.json",
-    "bronze_cdc_apply_changes": {
-      "keys": ["system_id"],
-      "sequence_by": "event_time",
-      "track_history_except_column_list": ["event_time"],
-      "scd_type": "2"
-    },
-    "silver_cdc_apply_changes": {
-      "keys": ["system_id"],
-      "sequence_by": "event_time",
-      "scd_type": "1",
-      "apply_as_deletes": "status = 'TERMINATED'"
-    }
+    "silver_data_quality_expectations_json_dev": "${workspace.file_path}/conf/dqe/host_status_updates_silver_dqe.json"
   }
 ]
