@@ -85,7 +85,7 @@ variables:
       Documents (and lets `bundle-validate` enforce) which install style this
       bundle uses. `pypi` -> `sdp_meta_dependency` should be a coordinate.
       `volume_path` -> `sdp_meta_dependency` should start with `/Volumes/`.
-    default: /Volumes/sdp_meta_lab/default/conf/wheels/
+    default: pypi
 
   sdp_meta_dependency:
     description: |
@@ -93,7 +93,7 @@ variables:
       `pip install` this verbatim and the onboarding job consumes it as an
       environments dependency. Must match `wheel_source`. The sentinel
       `__SET_ME__` will fail-fast at validate and at runtime.
-    default: /Volumes/sdp_meta_lab/default/conf/wheels/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl
+    default: databricks-labs-sdp-meta==0.1.0
 
   # NOTE: no `type:` on these booleans. Databricks bundles only accept
   # `type: complex` (for maps/arrays); `type: bool` is rejected with

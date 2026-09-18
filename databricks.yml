@@ -15,11 +15,14 @@ scripts:
 
   upload_sdp_meta_wheel:
     env:
-      WHEEL_SOURCE: ${var.wheel_source}
+      UC_CATALOG_NAME: ${var.uc_catalog_name}
+      SDP_META_SCHEMA: ${var.sdp_meta_schema}
+      CONF_VOLUME: ${var.conf_volume}
     content: |
       set -euo pipefail
-      databricks fs mkdirs "$WHEEL_SOURCE"
-      databricks fs cp "wheels/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl" "$WHEEL_SOURCE/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl" --overwrite
+      wheel_dir="dbfs:/Volumes/$UC_CATALOG_NAME/$SDP_META_SCHEMA/$CONF_VOLUME/wheel"
+      databricks fs mkdirs "$wheel_dir"
+      databricks fs cp "wheels/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl" "$wheel_dir/databricks_labs_sdp_meta-0.1.0-py3-none-any.whl" --overwrite
 
 include:
   - resources/*.yml
