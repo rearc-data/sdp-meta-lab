@@ -6,7 +6,12 @@
     "source_details": {
       "source_path_dev": "/Volumes/sdp_meta_lab/sdp_meta_egrun/sdp_meta/data",
       "source_metadata": {
-          "include_autoloader_metadata_column": "True"
+        "include_autoloader_metadata_column": "True",
+        "autoloader_metadata_col_name": "here_metadata",
+        "select_metadata_cols": {
+            "input_file_name": "file_name",
+            "input_file_path": "file_path"
+        }
       }
     },
     "bronze_catalog_dev": "sdp_meta_lab",

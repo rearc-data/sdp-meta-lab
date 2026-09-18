@@ -1,0 +1,26 @@
+[
+  {
+    "data_flow_group": "sdp_meta_lab_flow_group",
+    "data_flow_id": "host_status_updates_csv_volume",
+    "source_format": "cloudFiles",
+    "source_details": {
+      "source_path_dev": "/Volumes/sdp_meta_lab/sdp_meta_USERNAME/sdp_meta/data"
+    },
+    "bronze_catalog_dev": "sdp_meta_lab",
+    "bronze_database_dev": "sdp_meta_USERNAME",
+    "bronze_table": "host_status_updates_csv_bronze",
+    "bronze_reader_options": {
+      "cloudFiles.format": "csv",
+      "header": "true",
+      "cloudFiles.inferColumnTypes": "true",
+      "cloudFiles.rescuedDataColumn": "_rescued_data"
+    },
+    "bronze_partition_columns": [],
+    "bronze_data_quality_expectations_json": "${workspace.file_path}/conf/dqe/host_status_updates_bronze_dqe.json",
+    "silver_catalog_dev": "sdp_meta_lab",
+    "silver_database_dev": "sdp_meta_USERNAME",
+    "silver_table": "host_status_updates_csv_silver",
+    "silver_transformation_json_dev": "${workspace.file_path}/conf/host_status_updates_silver_transformations.json",
+    "silver_data_quality_expectations_json_dev": "${workspace.file_path}/conf/dqe/host_status_updates_silver_dqe.json"
+  }
+]
