@@ -1,0 +1,37 @@
+[
+  {
+    "target_table": "host_status_updates_us_silver",
+    "target_partition_cols": [],
+    "select_exp": [
+      "system_id",
+      "status",
+      "region",
+      "hostname",
+      "to_date(event_time, 'yyyy-MM-dd') as event_time",
+      "current_timestamp() as processed_at"
+    ],
+    "where_clause": [
+      "system_id is not null",
+      "event_time is not null",
+      "region like 'us-%'"
+    ]
+  },
+  {
+    "target_table": "host_status_updates_global_silver",
+    "target_partition_cols": [],
+    "select_exp": [
+      "system_id",
+      "status",
+      "region",
+      "hostname",
+      "to_date(event_time, 'yyyy-MM-dd') as event_time",
+      "current_timestamp() as processed_at"
+    ],
+    "where_clause": [
+      "system_id is not null",
+      "event_time is not null",
+      "region not like 'us-%'"
+    ]
+  }
+]
+ 

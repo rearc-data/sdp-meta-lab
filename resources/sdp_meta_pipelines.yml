@@ -18,7 +18,7 @@ resources:
       tags:
         sdp_meta: ${var.sdp_meta_version}
       catalog: ${var.uc_catalog_name}
-      schema: ${var.bronze_target_schema}
+      schema: ${var.sdp_meta_schema}
       development: ${var.development_enabled}
       photon: ${var.photon_enabled}
       serverless: ${var.serverless}

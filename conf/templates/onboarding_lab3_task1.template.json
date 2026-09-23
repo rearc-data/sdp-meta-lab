@@ -1,0 +1,34 @@
+[
+  {
+    "data_flow_id": "host_status_updates_us",
+    "data_flow_group": "sdp_meta_lab_flow_group",
+    "source_format": "delta",
+    "source_details": {
+      "source_database": "sdp_meta_lab.sdp_meta_USERNAME",
+      "source_table": "host_status_updates_csv_bronze"
+    },
+    "bronze_catalog_dev": "sdp_meta_lab",
+    "bronze_database_dev": "sdp_meta_USERNAME",
+    "bronze_table": "host_status_updates_csv_bronze",
+    "silver_catalog_dev": "sdp_meta_lab",
+    "silver_database_dev": "sdp_meta_USERNAME",
+    "silver_table": "host_status_updates_us_silver",
+    "silver_transformation_json_dev": "${workspace.file_path}/conf/lab3/host_status_updates_silver_transformations.json"
+  },
+  {
+    "data_flow_id": "host_status_updates_global",
+    "data_flow_group": "sdp_meta_lab_flow_group",
+    "source_format": "delta",
+    "source_details": {
+      "source_database": "sdp_meta_lab.sdp_meta_USERNAME",
+      "source_table": "host_status_updates_csv_bronze"
+    },
+    "bronze_catalog_dev": "sdp_meta_lab",
+    "bronze_database_dev": "sdp_meta_USERNAME",
+    "bronze_table": "host_status_updates_csv_bronze",
+    "silver_catalog_dev": "sdp_meta_lab",
+    "silver_database_dev": "sdp_meta_USERNAME",
+    "silver_table": "host_status_updates_global_silver",
+    "silver_transformation_json_dev": "${workspace.file_path}/conf/lab3/host_status_updates_silver_transformations.json"
+  }
+]

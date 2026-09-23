@@ -4,7 +4,7 @@
     "data_flow_id": "host_status_updates_csv_volume",
     "source_format": "cloudFiles",
     "source_details": {
-      "source_path_dev": "/Volumes/sdp_meta_lab/sdp_meta_USERNAME/sdp_meta/data"
+      "source_path_dev": "/Volumes/sdp_meta_lab/sdp_meta_USERNAME/sdp_meta/data/lab1"
     },
     "bronze_catalog_dev": "sdp_meta_lab",
     "bronze_database_dev": "sdp_meta_USERNAME",

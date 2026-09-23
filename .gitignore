@@ -71,3 +71,5 @@ Thumbs.db
 .gitmodules
 
 conf/onboarding.json
+conf/lab3/onboarding_lab3_task1.json
+conf/lab3/onboarding_lab3_task2.json

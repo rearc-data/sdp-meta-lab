@@ -1,0 +1,4 @@
+system_id,status,region,hostname,event_time
+SYS-2002,ACTIVE,eu-west,api-01,2025-01-05
+SYS-2002,MAINTENANCE,eu-west,api-01,2025-02-15
+SYS-2002,ACTIVE,eu-west,api-01,2025-02-21

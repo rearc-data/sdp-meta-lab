@@ -36,15 +36,15 @@ resources:
             package_name: databricks_labs_sdp_meta
             entry_point: run
             named_parameters:
-              onboard_layer: ${var.layer}
+              onboard_layer: bronze_silver
               database: ${var.uc_catalog_name}.${var.sdp_meta_schema}
-              onboarding_file_path: /Volumes/${var.uc_catalog_name}/${var.sdp_meta_schema}/${var.conf_volume}/conf/${var.onboarding_file_name}
+              onboarding_file_path: /Volumes/${var.uc_catalog_name}/${var.conf_volume}_egrun/sdp_meta/conf/lab3/onboarding_lab3_task2.json
               bronze_dataflowspec_table: ${var.bronze_dataflowspec_table}
               silver_dataflowspec_table: ${var.silver_dataflowspec_table}
               uc_enabled: "True"
               import_author: ${var.author}
               version: ${var.dataflowspec_version}
-              overwrite: ${var.overwrite_dataflowspecs}
+              overwrite: "True"
               env: ${bundle.target}
           environment_key: default
       environments:
