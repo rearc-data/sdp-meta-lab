@@ -5,11 +5,11 @@
     "source_format": "delta",
     "source_details": {
       "source_database": "sdp_meta_lab.sdp_meta_USERNAME",
-      "source_table": "host_status_updates_csv_bronze"
+      "source_table": "host_status_updates_bronze"
     },
     "bronze_catalog_dev": "sdp_meta_lab",
     "bronze_database_dev": "sdp_meta_USERNAME",
-    "bronze_table": "host_status_updates_csv_bronze",
+    "bronze_table": "host_status_updates_bronze",
     "silver_catalog_dev": "sdp_meta_lab",
     "silver_database_dev": "sdp_meta_USERNAME",
     "silver_table": "host_status_updates_us_silver",
@@ -21,11 +21,11 @@
     "source_format": "delta",
     "source_details": {
       "source_database": "sdp_meta_lab.sdp_meta_USERNAME",
-      "source_table": "host_status_updates_csv_bronze"
+      "source_table": "host_status_updates_bronze"
     },
     "bronze_catalog_dev": "sdp_meta_lab",
     "bronze_database_dev": "sdp_meta_USERNAME",
-    "bronze_table": "host_status_updates_csv_bronze",
+    "bronze_table": "host_status_updates_bronze",
     "silver_catalog_dev": "sdp_meta_lab",
     "silver_database_dev": "sdp_meta_USERNAME",
     "silver_table": "host_status_updates_global_silver",

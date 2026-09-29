@@ -1,6 +1,6 @@
 [
   {
-    "target_table": "host_status_updates_csv_silver",
+    "target_table": "host_status_updates_silver",
     "target_partition_cols": [],
     "select_exp": [
       "system_id",

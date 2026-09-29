@@ -38,7 +38,7 @@ resources:
             named_parameters:
               onboard_layer: bronze_silver
               database: ${var.uc_catalog_name}.${var.sdp_meta_schema}
-              onboarding_file_path: /Volumes/${var.uc_catalog_name}/${var.conf_volume}_egrun/sdp_meta/conf/lab3/onboarding_lab3_task2.json
+              onboarding_file_path: /Volumes/${var.uc_catalog_name}/${var.conf_volume}_egrun/sdp_meta/conf/onboarding.json
               bronze_dataflowspec_table: ${var.bronze_dataflowspec_table}
               silver_dataflowspec_table: ${var.silver_dataflowspec_table}
               uc_enabled: "True"

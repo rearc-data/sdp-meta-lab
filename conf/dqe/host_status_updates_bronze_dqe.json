@@ -7,6 +7,7 @@
     "valid_status": "status IN ('ACTIVE', 'DEGRADED', 'MAINTENANCE', 'OFFLINE', 'TERMINATED')"
   },
   "expect_or_quarantine": {
-    "valid_event_time": "try_to_date(event_time, 'yyyy-MM-dd') IS NOT NULL"
+    "valid_event_time": "try_to_date(event_time, 'yyyy-MM-dd') IS NULL",
+    "no_rescued_data": "_rescued_data IS NOT NULL"
   }
 }

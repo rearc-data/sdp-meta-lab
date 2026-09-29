@@ -1,6 +1,6 @@
 [
   {
-    "data_flow_id": "host_status_updates_merged_volume",
+    "data_flow_id": "host_status_updates_merged",
     "data_flow_group": "sdp_meta_lab_flow_group",
     "source_format": "cloudFiles",
     "source_details": {
@@ -17,7 +17,7 @@
       "scd_type": "2",
       "flows": [
         {
-          "name": "host_status_updates_apac_volume",
+          "name": "host_status_updates_apac",
           "source_format": "cloudFiles",
           "source_details": {
             "source_path_dev": "/Volumes/sdp_meta_lab/sdp_meta_USERNAME/sdp_meta/data/lab3/ap"
@@ -25,12 +25,12 @@
           "reader_options": {
             "cloudFiles.format": "csv",
             "header": "true",
-            "cloudFiles.inferColumnTypes": "true",
+            "cloudFiles.inferColumnTypes": "false",
             "cloudFiles.rescuedDataColumn": "_rescued_data"
           }
         },
         {
-          "name": "host_status_updates_us_volume",
+          "name": "host_status_updates_us",
           "source_format": "cloudFiles",
           "source_details": {
             "source_path_dev": "/Volumes/sdp_meta_lab/sdp_meta_USERNAME/sdp_meta/data/lab3/us"
@@ -38,12 +38,12 @@
           "reader_options": {
             "cloudFiles.format": "csv",
             "header": "true",
-            "cloudFiles.inferColumnTypes": "true",
+            "cloudFiles.inferColumnTypes": "false",
             "cloudFiles.rescuedDataColumn": "_rescued_data"
           }
         },
         {
-          "name": "host_status_updates_eu_volume",
+          "name": "host_status_updates_eu",
           "source_format": "cloudFiles",
           "source_details": {
             "source_path_dev": "/Volumes/sdp_meta_lab/sdp_meta_USERNAME/sdp_meta/data/lab3/eu"
@@ -51,7 +51,7 @@
           "reader_options": {
             "cloudFiles.format": "csv",
             "header": "true",
-            "cloudFiles.inferColumnTypes": "true",
+            "cloudFiles.inferColumnTypes": "false",
             "cloudFiles.rescuedDataColumn": "_rescued_data"
           }
         }
